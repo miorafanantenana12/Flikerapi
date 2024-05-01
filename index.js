@@ -2,6 +2,11 @@ const express = require('express');
 const axios = require('axios');
 const app = express();
 
+// Route pour gérer la requête GET à la racine
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
+
 app.get('/api/react', (req, res) => {
     const { link, type, cookie } = req.query;
     axios.post("https://flikers.net/android/android_get_react.php", {
